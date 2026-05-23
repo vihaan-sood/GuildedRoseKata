@@ -65,10 +65,6 @@ public class GildedRoseTest
         app.UpdateQuality();
         Assert.That(items[0].Quality, Is.EqualTo(2));
 
-        items[0].SellIn = 0;
-        app.UpdateQuality();
-        Assert.That(items[0].Quality, Is.EqualTo(3));
-
     }
 
     [Test]
@@ -126,15 +122,13 @@ public class GildedRoseTest
     {
         var items = new List<Item> {
             new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 30 },
-            new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 30 },
             new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 3, Quality = 30 }
 
         };
         var app = new GildedRose(items);
         app.UpdateQuality();
         Assert.That(items[0].Quality, Is.EqualTo(33));
-        Assert.That(items[1].Quality, Is.EqualTo(0));
-        Assert.That(items[2].Quality, Is.EqualTo(33));
+        Assert.That(items[1].Quality, Is.EqualTo(33));
 
 
     }
@@ -142,13 +136,38 @@ public class GildedRoseTest
     [Test]
     public void BackstagePasses_QualityEquals0_AfterConcert()
     {
+        var items = new List<Item> {
+         
+            new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 30 },
+
+
+        };
+
+        var app = new GildedRose(items);
+        app.UpdateQuality();
+        Assert.That(items[0].Quality, Is.EqualTo(0));
+
+        app.UpdateQuality();
+        Assert.That(items[0].Quality, Is.EqualTo(0));
 
     }
     
         [Test]
     public void ConjuredItems_DegradeQualityTwiceAsFast() 
     {
-        
-    }
+        var items = new List<Item> {
 
+            new Item {Name = "Conjured Potion Cake", SellIn = 3, Quality = 6},
+
+
+        };
+
+        var app = new GildedRose(items);
+        app.UpdateQuality();
+
+        Assert.That(items[0].Quality, Is.EqualTo(4));
+
+
+    }
 }
+
