@@ -1,4 +1,4 @@
-This is Emily Bache's GuildedRoseKata, for which I chose C#. It's a great exercise to improve at writing unit tests and debugging existing code based on a spec. Check out my unit tests [here](csharp.NUnit\GildedRoseTests\GildedRoseTest.cs)
+This is Emily Bache's GuildedRoseKata, for which I chose C#. It's a great exercise to improve at writing unit tests and debugging existing code based on a spec. Check out my unit tests [here](https://github.com/vihaan-sood/GuildedRoseKata/blob/main/csharp.NUnit/GildedRoseTests/GildedRoseTest.cs)
 
 
 
