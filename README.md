@@ -1,8 +1,11 @@
 This is Emily Bache's GuildedRoseKata, for which I chose C#. It's a great exercise to improve at writing unit tests, debugging, and refactoring existing code based on a spec. 
 
+
 Check out my unit tests [here](https://github.com/vihaan-sood/GuildedRoseKata/blob/main/csharp.NUnit/GildedRoseTests/GildedRoseTest.cs)
 
-Refactor coming soon
+[GildedRosePreRefactor](https://github.com/vihaan-sood/GuildedRoseKata/blob/main/csharp.NUnit/GildedRose/GildedRosePreRefactor.cs) contains the original code changed to pass Unit tests and does implmenet Conjured Items. Approval tests passes (minus ConjuredItem as Approval Tests does not implement them)
+
+Current code is refactored version and has same behaviour as the pre refactored version (i.e. with ConjuredItem Implementation).
 
 <hr>
 

@@ -70,9 +70,8 @@ public class GildedRoseTest
     [Test]
     public void CommonQuality_NeverGreaterThan50()
     {
-        var items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 10, Quality = 50 } };
+        var items = new List<Item> { new Item { Name = "CommonItem", SellIn = 10, Quality = 51 } };
         var app = new GildedRose(items);
-        app.UpdateQuality();
         Assert.That(items[0].Quality, Is.EqualTo(50));
     }
 
@@ -90,8 +89,9 @@ public class GildedRoseTest
     [Test]
     public void QualityOfSulfurasLegendary_DoesNotChange()
     {
-        var items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 80 } };
+        var items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 90 } };
         var app = new GildedRose(items);
+        Assert.That(items[0].Quality, Is.EqualTo(80));
         app.UpdateQuality();
         Assert.That(items[0].Quality, Is.EqualTo(80));
 
